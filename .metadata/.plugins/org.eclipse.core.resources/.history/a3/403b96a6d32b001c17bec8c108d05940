@@ -1,0 +1,6 @@
+package com.bridgelabz.day11;
+
+public interface StdOut 
+{
+	static void println()
+}

@@ -1,0 +1,63 @@
+package com.bridgelabz.day11;
+
+import java.util.Random;
+
+public final class StdRandom 
+{
+	private static Random random;
+	private static long seed;
+	static {
+		seed = System.currentTimeMillis();
+		random = new Random(seed);
+	}
+		private StdRandom() {}
+		public static void setSeed(long s)
+		{
+			seed = s;
+			random = new Random(seed);
+		}
+		static long getSeed()
+		{
+			return seed;
+		}
+		public static double uniform()
+		{
+			return random.nextDouble();
+		}
+		public static int uniform(int n)
+		{
+			if(n <= 0) throw new IllegalArgumentException("argument must be positive " +n);
+			return random.nextInt(n);
+		}
+		public static long uniform(long n)
+		{
+			if (n <= 0L) throw new IllegalArgumentException("argument must be positive " +n);
+			long r = random.nextLong();
+			long m = n-1;
+			if((n & m) == 0L)
+			{
+				return r & m;
+			}
+			long u = r >>> 1;
+			while(u + m -(r = u % n) < 0L)
+			{
+				u = random.nextLong() >>> 1;
+			}
+			return r;
+		}
+		public static double random() {
+			return uniform();
+		}
+		public static int uniform(int a, int b) {
+			if ((b <= a) || ((long) b - a >= Integer.MAX_VALUE))
+		}
+
+	public static void main(String[] args) 
+	{
+		int n = Integer.parseInt(args[0]);
+		if (args.length == 2) StdRandom.setSeed(Long.parseLong(args[1]));
+		double[] probabilities = {0.5 , 0.3, 0.1, 0.1};
+		int[] frequencies = { 5, 3, 1, 1};
+		String[] a = " A B C D E F G".split(" ");
+	}
+}

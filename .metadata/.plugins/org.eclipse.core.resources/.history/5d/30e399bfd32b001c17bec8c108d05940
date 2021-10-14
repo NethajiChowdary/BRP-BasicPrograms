@@ -1,0 +1,12 @@
+package com.bridgelabz.day11;
+
+import org.w3c.dom.css.Counter;
+
+public interface StdOut 
+{
+	static void println(Counter zipf)
+	{
+		
+	}
+	static void 
+}
